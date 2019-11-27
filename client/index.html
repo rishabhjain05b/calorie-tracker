@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Leonel Machava Project - Calories Tracker</title>
+
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/vendor/pickadate/compressed/themes/classic.css" rel="stylesheet">
+        <link href="/vendor/pickadate/compressed/themes/classic.date.css" rel="stylesheet">
+        <link href="/vendor/pickadate/compressed/themes/classic.time.css" rel="stylesheet">
+        <link href="vendor/angular-loading-bar/build/loading-bar.min.css" rel="stylesheet">
+        <link href="/css/main.css" rel="stylesheet">
+        <script src="/vendor/jquery/jquery.min.js"></script>
+        <script src="/vendor/angular/angular.min.js"></script>
+	</head>
+	<body ng-app="app">
+        <div class="container">
+            <header class="main-header clearfix">
+                <a class="logo" ng-class="{'center-block':  !currentUser}"  ui-sref="home"><h1 class="zero-margin">CalTracker</h1></a>
+                <nav class="" ng-show="currentUser">
+                    <ul class="nav nav-pills">
+                        <li ui-sref-active="active"><a ui-sref="home">Dashboard</a></li>
+                        <li ui-sref-active="active"><a ui-sref="settings">Settings</a></li>
+                        <li ng-hide="currentUser.role === 0" ui-sref-active="active"><a ui-sref="admin">Administration</a></li>
+                        <li ui-sref-active="active"><a ui-sref="logout">Logout</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <div ui-view></div>
+            </main>
+        </div>
+
+        <script src="/vendor/angular-ui-router/angular-ui-router.min.js"></script>
+
+        <script src="vendor/pickadate/compressed/picker.js"></script>
+        <script src="vendor/pickadate/compressed/picker.date.js"></script>
+        <script src="vendor/pickadate/compressed/picker.time.js"></script>
+
+        <script src="vendor/angular-loading-bar/build/loading-bar.min.js"></script>
+        <script src="vendor/underscore/underscore-min.js"></script>
+        <script src="vendor/d3/d3.min.js"></script>
+
+        <!--removeIf(production)-->
+        <script src="app.js"></script>
+        <script src="directives/ct_modal.js"></script>
+        <script src="directives/ct_datepicker.js"></script>
+        <script src="directives/ct_timepicker.js"></script>
+        <script src="directives/ct_password_match.js"></script>
+        <script src="directives/ct_calories_indicator.js"></script>
+        <script src="services/date.js"></script>
+        <script src="services/modal.js"></script>
+        <script src="services/auth.js"></script>
+        <script src="services/user.js"></script>
+        <script src="services/meal.js"></script>
+        <script src="services/auth_interceptor.js"></script>
+        <script src="controllers/home.js"></script>
+        <script src="controllers/signup.js"></script>
+        <script src="controllers/login.js"></script>
+        <script src="controllers/logout.js"></script>
+        <script src="controllers/settings.js"></script>
+        <script src="controllers/settings.meals.js"></script>
+        <script src="controllers/settings.security.js"></script>
+        <script src="controllers/settings.profile.js"></script>
+        <script src="controllers/admin.users.js"></script>
+        <script src="controllers/admin.meals.js"></script>
+        <script src="controllers/calories_indicator_controller.js"></script>
+        <!--endRemoveIf(production)-->
+
+        <!--removeIf(development)-->
+        <script src="all.js"></script>
+        <!--endRemoveIf(development)-->
+	</body>
+</html>

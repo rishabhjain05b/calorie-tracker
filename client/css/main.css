@@ -1,0 +1,221 @@
+body {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    background-color: #3E4651;
+    position: relative;
+    color: #fff;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.main-header nav a {
+    color: #ddd;
+}
+
+.main-header {
+    padding: 10px 0;
+    padding: 0;
+}
+
+a.logo {
+    display: block;
+    max-width: 180px;
+    text-align: center;
+    padding: 5px 10px;
+    background-color: #F1654C;
+    color: #fff;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.logo h1 {
+    font-size: 30px;
+}
+
+.zero-margin {
+    margin: 0;
+}
+
+.zero-padding {
+    padding: 0;
+}
+
+.width-50 {
+    width: 50px !important;
+}
+
+.width-75 {
+    width: 75px !important;
+}
+
+.login-box,
+.signup-box {
+    max-width: 400px;
+    margin: 50px auto;
+}
+
+.login-box form,
+.signup-box form,
+.sexy form {
+    background-color: #fff;
+    padding: 15px 17px;
+    border-radius: 3px;
+    color: #666;
+}
+
+.orphan-button-adjust {
+    margin-top: -30px;
+    padding: 15px 17px;
+}
+
+.login-box label {
+    color: #777;
+}
+
+.login-box input,
+.signup-box input,
+.sexy input {
+    display: block;
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 3px;
+}
+
+.form-group p {
+    font-size: 12px;
+    color: #cc0000;
+}
+
+.sexy select {
+    display: block;
+}
+
+.sexy input {
+    max-width: 400px;
+    font-size: 18px;
+}
+
+.button {
+    padding: 15px 10px;
+    background-color: #5fcf80;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 4px;
+}
+
+.login-box button,
+.signup-box button {
+    width: 100%;
+}
+
+.meal-box {
+    max-width: 700px;
+}
+
+.sexy {
+    background-color: #fff;
+    color: #666;
+    min-height: 100px;
+    padding: 10px;
+}
+
+.vertical-padding-10 {
+    padding: 10px 0;
+}
+
+.main-header nav {
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+
+.container {
+    position: relative;
+}
+
+main {
+    margin-top: 30px;
+}
+
+.table {
+    background-color: #fff;
+    color: #666;
+    border-radius: 4px;
+}
+
+.form-meal {
+    padding: 10px 0;
+}
+
+.meal-filter {
+    padding: 20px 0;
+}
+
+.meal-filter input {
+    display: inline;
+    width: 140px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.ct-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 5000;
+}
+
+.ct-modal-closed {
+    display: none;
+}
+
+.modal-child {
+    background-color: #fff;
+    opacity: 1;
+    z-index: 6000;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.calories-indicator {
+    max-width: 150px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #D6523C;
+    color: #8A2D3C;
+}
+
+.calories-indicator.green {
+    background-color: #BADA55;
+    color: #D98B3A;
+}
+
+.calories-indicator .title {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.calories-indicator .body {
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.d3-graph div {
+    padding: 3px 5px;
+    color: #333;
+    background-color: #BADA55;
+    margin-bottom: 5px;
+    font-size: 11px;
+    white-space: nowrap;
+}

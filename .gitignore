@@ -1,0 +1,8 @@
+.DS_Store
+/node_modules/
+/client/vendor/
+/public/
+/server/config/config.local.js
+.idea/
+/coverage/
+/npm-debug.log

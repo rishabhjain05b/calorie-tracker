@@ -1,0 +1,43 @@
+<div class="signup-box">
+    <form name="form" ng-submit="signupCtrl.signup()" novalidate>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input name="username" type="text" ng-model="signupCtrl.user.username"
+                   ng-minlength="3" ng-maxlength="20" required>
+            <p ng-show="form.username.$error.minlength">Username is too short</p>
+            <p ng-show="form.username.$error.maxlength">Username is too long</p>
+            <p ng-show="form.username.$error.required && !form.username.$pristine">Username cannot be blank</p>
+        </div>
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input name="firstName" type="text" ng-model="signupCtrl.user.firstName" required>
+            <p ng-show="form.firstName.$error.required && !form.firstName.$pristine">First name cannot be blank</p>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input name="lastName" type="text" ng-model="signupCtrl.user.lastName" required>
+            <p ng-show="form.lastName.$error.required && !form.lastName.$pristine">Last name cannot be blank</p>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input name="password" type="password" ng-model="signupCtrl.user.password" ng-minlength="6" required>
+            <p ng-show="form.password.$error.required && !form.password.$pristine">Password cannot be blank</p>
+            <p ng-show="form.password.$error.minlength && !form.password.$pristine">Password is too short</p>
+        </div>
+        <div class="form-group">
+            <label for="passwordConf">Password Confirmation:</label>
+            <input name="passwordConf" type="password" ng-model="signupCtrl.user.passwordConf"
+                    ct-password-match="signupCtrl.user.password">
+            <p ng-show="form.passwordConf.$error.pwMatch && !form.passwordConf.$pristine">Password and confirmation do not match</p>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="button"
+                    ng-disabled="form.$invalid"
+                    title="{{ form.$invalid ?
+                              'Please fill all required fields before submitting' : '' }}">Sign Up</button>
+        </div>
+        <div>
+            Already have an account? <a ui-sref="login">Sign in</a>
+        </div>
+    </form>
+</div>

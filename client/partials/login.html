@@ -1,0 +1,23 @@
+<div class="login-box">
+    <form name="loginForm" ng-submit="loginCtrl.login()" novalidate>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input name="username" type="text"  ng-model="loginCtrl.username" required>
+            <p ng-show="loginForm.username.$invalid && !loginForm.username.$pristine">The username cannot be blank</p>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input name="password" type="password" ng-model="loginCtrl.password" required>
+            <p ng-show="loginForm.password.$invalid && !loginForm.password.$pristine">The password cannot be blank</p>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="button"
+                    ng-disabled="loginForm.$invalid"
+                    title="{{ loginForm.$invalid ?
+                              'Please fill all required fields before submitting' : '' }}">Sign In</button>
+        </div>
+        <div>
+            Don't have an account? No problem, <a ui-sref="signup">Sign up here</a>
+        </div>
+    </form>
+</div>

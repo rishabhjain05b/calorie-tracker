@@ -1,0 +1,79 @@
+<div class="sexy">
+    <button class="btn btn-primary" ng-click="adminUsersCtrl.showUserAddForm(form)">Add User</button>
+    <div>
+        <ct-modal>
+            <div class="modal-child">
+                <form name="form"  novalidate>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input name="username" type="text" ng-model="adminUsersCtrl.user.username"
+                               ng-minlength="3" ng-maxlength="20" required>
+                        <p ng-show="form.username.$error.minlength && !form.username.$pristine">Username is too short</p>
+                        <p ng-show="form.username.$error.maxlength && !form.username.$pristine">Username is too long</p>
+                        <p ng-show="form.username.$error.required && !form.username.$pristine">Username cannot be blank</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input name="firstName" type="text" ng-model="adminUsersCtrl.user.firstName" required>
+                        <p ng-show="form.firstName.$error.required && !form.firstName.$pristine">First name cannot be blank</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input name="lastName" type="text" ng-model="adminUsersCtrl.user.lastName" required>
+                        <p ng-show="form.lastName.$error.required && !form.lastName.$pristine">Last name cannot be blank</p>
+                    </div>
+
+                    <div class="form-group" ng-show="adminUsersCtrl.isEditingUser && !adminUsersCtrl.isChangingPassword">
+                        <a href="" ng-click="adminUsersCtrl.toggleChangePassword()">Change Password</a>
+                    </div>
+                    <div class="form-group" ng-show="!adminUsersCtrl.isEditingUser || adminUsersCtrl.isChangingPassword">
+                        <label for="password">Password</label>
+                        <input name="password" type="password" ng-model="adminUsersCtrl.user.password" ng-minlength="6" required>
+                        <p ng-show="form.password.$error.required && !form.password.$pristine">Password cannot be blank</p>
+                        <p ng-show="form.password.$error.minlength && !form.password.$pristine">Password is too short</p>
+                    </div>
+                    <div class="form-group" ng-show="adminUsersCtrl.canChangeRole">
+                        <label for="role">Role</label>
+                        <select id="role" ng-model="adminUsersCtrl.user.role" ng-options="item.id as item.desc for item in adminUsersCtrl.roles">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="button" ng-click="adminUsersCtrl.addOrUpdateUser()"
+                                ng-disabled="!adminUsersCtrl.isValid(form)"
+                                title="{{ !adminUsersCtrl.isValid(form) ?
+                                        'Please fill all required fields before submitting' : '' }}">Add/Update</button>
+                        <a href="" ng-click="adminUsersCtrl.cancel()">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </ct-modal>
+    </div>
+    <table class="table">
+        <thead>
+            <th>Username</th>
+            <th>Role</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="user in adminUsersCtrl.users">
+                <td>{{user.username}}</td>
+                <td>
+                    <div ng-switch="user.role">
+                        <div ng-switch-when="0">Regular</div>
+                        <div ng-switch-when="1">Manager</div>
+                        <div ng-switch-when="2">Admin</div>
+                    </div>
+                </td>
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+                <td>
+                    <a href="" ng-click="adminUsersCtrl.showUserEditForm(user)">Edit</a>
+
+                    <a href="" ng-click="adminUsersCtrl.removeUser(user._id)">Remove</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
