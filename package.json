@@ -17,7 +17,7 @@
     "bower": "^1.6.5",
     "express": "^4.17.1",
     "express-validator": "^2.21.0",
-    "jsonwebtoken": "^5.7.0",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^4.13.19"
   },
   "devDependencies": {
